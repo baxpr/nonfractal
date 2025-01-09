@@ -16,6 +16,7 @@ export PATH=${MATLABROOT}/bin:${PATH}
 mcc -m -C -v matlab_entrypoint.m \
     -a ../m \
     -a ../wmtsa-matlab-0.2.6 \
+    -a spm_readwrite_nii \
     -d bin
 
 # We grant lenient execute permissions to the matlab executable and runscript so
