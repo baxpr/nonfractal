@@ -8,7 +8,8 @@
 % Get path to this startup file
 this_file = mfilename('fullpath');
 
-[wmtsa_path, filename, ext, versn] = fileparts(this_file);
+%[wmtsa_path, filename, ext, versn] = fileparts(this_file);
+[wmtsa_path, filename, ext] = fileparts(this_file);
 
 % Set paths
 
