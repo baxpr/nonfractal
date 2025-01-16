@@ -1,3 +1,4 @@
 INPUTS
 OUTPUTS
 wmtsa-matlab-0.2.6.tar.gz
+pipeline/test_matlab.m
