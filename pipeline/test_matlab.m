@@ -1,3 +1,4 @@
+addpath('spm_readwrite_nii')
 addpath('../m')
 
 % For Mac silicon:
