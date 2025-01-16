@@ -37,7 +37,7 @@ end
 % Reshape back to image dims
 rYhurst = zeros(size(rYmask));
 rYhurst(keeps) = mrYhurst;
-Yhurst = reshape(rYhurst',osize);
+Yhurst = reshape(rYhurst',osize(1:3));
 
 Vout = rmfield(Vmask,'pinfo');
 Vout.fname = fullfile(inp.out_dir,'hurst.nii');
