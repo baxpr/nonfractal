@@ -1,0 +1,2 @@
+Path	Symbol	Reason
+home/rogersbp/repo/nonfractal/wmtsa-matlab-0.2.6/wmtsa/wmtsa_startup.m	mex	undeployable
