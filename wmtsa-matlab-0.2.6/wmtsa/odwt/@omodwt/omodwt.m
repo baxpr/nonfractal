@@ -2,18 +2,18 @@ class omodwt
 % file:  @omodwt/omodwt.m
 % Public Properties
   properties (SetAccess = 'private')
-    X@double           = [];
-    WJ@double          = [];
-    VJ@double          = [];
+    X                  = [];
+    WJ                 = [];
+    VJ                 = [];
                        
-    WTF@char           = '';
+    WTF                = '';
     NX                 = 0;
     NW                 = 0;
     J0                 = 0;
     NChan              = 0;
-    Boundary@char      = '';
-    Aligned@logical    = false;
-    RetainedVJ@logical = false;
+    Boundary           = '';
+    Aligned            = false;
+    RetainedVJ         = false;
     
  
 % Class methods
