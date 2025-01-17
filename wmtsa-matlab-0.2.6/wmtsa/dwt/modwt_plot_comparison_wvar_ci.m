@@ -51,7 +51,6 @@ function  modwt_plot_comparison_wvar_ci(WJ, ylabel_str, title_str)
 
   usage_str = ['Usage:  ', mfilename, ...
                '(WJ, [ylabel_str], [title_str])'];
-               '[figtitle_str], [plotOpts])'];
 
   %%  Check input arguments and set defaults.
   error(nargerr(mfilename, nargin, [1:4], nargout, '', 1, usage_str, 'struct'));
