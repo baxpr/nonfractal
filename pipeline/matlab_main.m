@@ -16,10 +16,10 @@ rYmask = reshape(Ymask,[],1)';
 
 % Find in-mask voxels
 keeps = rYmask>0;
-mrYfmri = Yfmri(:,keeps);
+nvox = sum(keeps);
+mrYfmri = rYfmri(:,keeps);
 
 % Compute Hurst exponent. Break into blocks to avoid memory limits
-nvox = size(mrYfmri,2);
 mrYhurst = zeros(1,nvox);
 bksize = 1000;
 for startv = 1:bksize:nvox
