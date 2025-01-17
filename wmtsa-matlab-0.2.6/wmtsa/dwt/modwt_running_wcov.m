@@ -113,7 +113,7 @@ function [rwcov, CI_rwcov, indices] = modwt_running_wcov(TWJtX, TWJtY, range, st
   %%  Set defaults
   set_default('step', 1);
   set_default('span', 2^J);
-  set_default('p', 0.025;
+  set_default('p', 0.025);
   
   if (~exist('range', 'var') || isempty(range))
     start = 1 + span / 2;
