@@ -1,4 +1,4 @@
-class omodwt
+classdef omodwt
 % file:  @omodwt/omodwt.m
 % Public Properties
   properties (SetAccess = 'private')
