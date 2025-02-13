@@ -1,5 +1,10 @@
 function matlab_entrypoint(varargin)
 
+% Bail if requested (for dockerfile build)
+if strcmp(varargin{1},'quit')
+    exit
+end
+
 % Parse inputs
 P = inputParser;
 addOptional(P,'fmri_niigz','/INPUTS/fmri.nii.gz')
