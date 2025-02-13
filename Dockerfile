@@ -24,7 +24,7 @@ ENV MCR_CACHE_ROOT=/tmp
 COPY * /opt/nonfractal/
 
 # Add pipeline to system path
-ENV PATH /opt/nonfractal/pipeline/bin:${PATH}
+ENV PATH=/opt/nonfractal/pipeline/bin:${PATH}
 
 # Matlab executable must be run at build to extract the CTF archive
 RUN run_matlab_entrypoint.sh ${MATLAB_RUNTIME} quit
