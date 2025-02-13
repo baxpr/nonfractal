@@ -27,7 +27,7 @@ COPY * /opt/nonfractal/
 ENV PATH=/opt/nonfractal/pipeline/bin:${PATH}
 
 # Matlab executable must be run at build to extract the CTF archive
-RUN run_matlab_entrypoint.sh ${MATLAB_RUNTIME} quit
+#RUN run_matlab_entrypoint.sh ${MATLAB_RUNTIME} quit
 
 # Entrypoint
-ENTRYPOINT ["run_matlab_entrypoint.sh","/usr/local/MATLAB/MATLAB_Runtime/R2023a"]
+#ENTRYPOINT ["run_matlab_entrypoint.sh","/usr/local/MATLAB/MATLAB_Runtime/R2023a"]
