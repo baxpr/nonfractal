@@ -21,7 +21,7 @@ ENV MCR_INHIBIT_CTF_LOCK=1
 ENV MCR_CACHE_ROOT=/tmp
 
 # Copy the pipeline code
-COPY * /opt/nonfractal/
+COPY . /opt/nonfractal/
 
 # Add pipeline to system path
 ENV PATH=/opt/nonfractal/pipeline/bin:${PATH}
