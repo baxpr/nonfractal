@@ -26,7 +26,7 @@ inputs:
     scans:
 
       - name: scan_fmri
-        types: REST
+        types: Resting State
         skip_unusable: True
 
     assessors:
