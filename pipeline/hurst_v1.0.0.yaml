@@ -43,7 +43,7 @@ inputs:
 
 
 outputs:
-  - {path: Hurst, type: FILE, resource: hurst.nii.gz}
+  - {path: hurst.nii.gz, type: FILE, resource: HURST}
 
 
 command:
