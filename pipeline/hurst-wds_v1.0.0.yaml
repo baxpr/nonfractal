@@ -1,0 +1,60 @@
+---
+procyamlversion: 3.0.0-dev.0
+
+description: Hurst exponent, https://github.com/baxpr/nonfractal
+
+jobtemplate: job_template_v3.txt
+
+containers:
+  - name: nonfractal
+    path: nonfractal_v1.0.0.sif
+    source: docker://baxterprogers/nonfractal:v1.0.0
+
+requirements:
+  walltime: 0-12
+  memory: 8000
+
+inputs:
+  xnat:
+      
+    filters:
+      - type: match
+        inputs: scan_fmri,assr_fmriprep/scan_fmri
+      - type: match
+        inputs: scan_fmri,assr_xcpd/scan_fmri
+
+    scans:
+
+      - name: scan_fmri
+        types: Resting state
+        skip_unusable: True
+
+    assessors:
+        
+        - name: assr_fmriprep
+          proctypes: fmriprep_v24
+          resources:
+            - {resource: fmriprepBIDS, ftype: DIR, fdest: fmriprepBIDS}
+
+        - name: assr_xcpd
+          proctypes: xcpd-wds-levhurst_v0
+          resources:
+            - {resource: xcpdBIDS, ftype: DIR, fdest: xcpdBIDS}
+
+
+outputs:
+  - {path: hurst.nii.gz, type: FILE, resource: HURST}
+
+
+command:
+  type: singularity_exec
+  container: nonfractal
+  args: >-
+    bash -c '
+      cp /INPUTS/fmriprepBIDS/fmriprepBIDS/sub-*/ses-*/func/*_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz /INPUTS/mask.nii.gz &&
+      cp /INPUTS/xcpdBIDS/xcpdBIDS/sub-*/ses-*/func/*_space-MNI152NLin2009cAsym_desc-denoised_bold.nii.gz /INPUTS/fmri.nii.gz &&
+      run_matlab_entrypoint.sh /usr/local/MATLAB/MATLAB_Runtime/R2023a
+      fmri_niigz /INPUTS/fmri.nii.gz
+      mask_niigz /INPUTS/mask.nii.gz
+      out_dir /OUTPUTS
+    '
